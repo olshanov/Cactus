@@ -96,7 +96,7 @@ class CliTestCase(BaseTestCase):
 
         ret, out, err = self.run_cli(["build", "--path", self.path], cwd=self.test_dir)
         self.assertEqual(0, ret)
-        self.assertIn(os.path.join(self.path, "config.json"), err)  # Check that we tried to find the config file in the right folder (and failed)
+        self.assertIn(os.path.join(self.path, "config.yaml"), err)  # Check that we tried to find the config file in the right folder (and failed)
 
         ret, _, _ = self.run_cli(["build", "-d", self.path], cwd=self.test_dir)
         self.assertEqual(0, ret)

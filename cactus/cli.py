@@ -127,7 +127,7 @@ def parse_arguments(cli, args):
     # Small hack to provide a default value while not replacing what's
     # given by the user, if there is
     if hasattr(ns, 'config') and ns.config is None:  # We don't need config for create
-        ns.config = [os.path.join(ns.path, 'config.json')]
+        ns.config = [os.path.join(ns.path, 'config.yaml')]
 
     return ns
 

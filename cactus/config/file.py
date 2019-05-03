@@ -1,5 +1,5 @@
 #coding:utf-8
-import json
+import yaml
 import logging
 
 
@@ -30,7 +30,7 @@ class ConfigFile(object):
         self._data = {}
 
         try:
-            self._data = json.load(open(self.path, "rU"))
+            self._data = yaml.load(open(self.path, "rU"), Loader=yaml.Loader)
             self._dirty = False
         except IOError:
             logger.warning("Unable to load configuration at '{0}'. No file found.".format(self.path))
@@ -41,6 +41,7 @@ class ConfigFile(object):
 
     def write(self):
         if self._dirty:
-            json.dump(self._data, open(self.path, "w"), sort_keys=True, indent=4, separators=(",", ": "))
+            #yaml.dump(self._data, open(self.path, "w"), sort_keys=True, indent=4, separators=(",", ": "))
+            yaml.dump(self._data, open(self.path, "w"))
             self._dirty = False
         logger.debug("Saved configuration at {0}".format(self.path))

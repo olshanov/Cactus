@@ -59,7 +59,7 @@ class BaseBootstrappedTestCase(BaseTestCase):
 class SiteTestCase(BaseBootstrappedTestCase):
     def setUp(self):
         super(SiteTestCase, self).setUp()
-        self.config_path = os.path.join(self.path, 'config.json')
+        self.config_path = os.path.join(self.path, 'config.yaml')
         self.conf = ConfigRouter([self.config_path])
         self.conf.set('site-url', 'http://example.com/')
         for k, v in self.get_config_for_test().items():

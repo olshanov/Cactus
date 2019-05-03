@@ -139,7 +139,7 @@ To enable a plugin for your site, change the file name from [PLUGIN].disabled.py
 ### Deploying
 
 Cactus can deploy your website directly to S3, all you need are your Amazon credentials and a bucket name. Cactus
-remembers these in a configuration file name config.json to make future deploys painless. The secret key is stored
+remembers these in a configuration file name config.yaml to make future deploys painless. The secret key is stored
 securely in the Keychain or similar services on other OSs.
 
     cactus deploy
@@ -164,7 +164,7 @@ Blog plugin takes post title, author, and date from metadata. For example:
 
     {% endblock %}
 
-Modify `config.json` to set a custom blog path, default author name, or date pattern used to parse metadata. The defaults are:
+Modify `config.yaml` to set a custom blog path, default author name, or date pattern used to parse metadata. The defaults are:
 
     "blog": {
         "path": "blog",
@@ -215,7 +215,7 @@ template tag to link to your static assets: they might be renamed in the process
 
 ##### Fingerprinting
 
-Modify `config.json`, and add the extensions you want to be fingerprinting:
+Modify `config.yaml`, and add the extensions you want to be fingerprinting:
 
     "fingerprint": [
         "js",
@@ -227,7 +227,7 @@ This lets you enable caching with long expiration dates. When a file changes, it
 
 ##### Optimization
 
-Modify `config.json`, and add the extensions you want to be optimizing:
+Modify `config.yaml`, and add the extensions you want to be optimizing:
 
     "optimize": [
         "js",
@@ -247,7 +247,7 @@ optimizers!
 #### Site URL
 
 If you would like for your sitemap to have absolute paths you need to
-add a site-url key to your config.json
+add a site-url key to your config.yaml
 
 You can enable this by adding modifying your configuration and adding:
 

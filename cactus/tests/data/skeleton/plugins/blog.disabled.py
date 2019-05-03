@@ -1,5 +1,5 @@
 """
-Modify `config.json` to set a custom blog path, default author name, or date pattern used to parse metadata. The defaults are:
+Modify `config.yaml` to set a custom blog path, default author name, or date pattern used to parse metadata. The defaults are:
 "blog": {
     "path": "blog",
     "author": "Unknown",

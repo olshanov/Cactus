@@ -58,7 +58,7 @@ class TestBuild(SiteTestCase):
 
         # Some plausible files
         self.assertEqual(True, self.site._rebuild_should_ignore(
-            os.path.join(self.site.path, "config.json")))
+            os.path.join(self.site.path, "config.yaml")))
         self.assertEqual(True, self.site._rebuild_should_ignore(
             os.path.join(self.site.path, "readme.txt")))
         self.assertEqual(True, self.site._rebuild_should_ignore(
