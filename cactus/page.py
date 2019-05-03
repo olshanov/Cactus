@@ -170,11 +170,7 @@ class Page(PageCompatibilityLayer, ResourceURLHelperMixin):
         # Parse as YAML
         if parsing_yaml:
             [raw_yaml, template] = data.split('...', 1)
-            try:
-                return yaml.load(raw_yaml), template
-            except Exception as e:
-                # Safety return
-                return {}, template
+            return yaml.safe_load(raw_yaml), template
 
         # Parse using the old parser
         else:
