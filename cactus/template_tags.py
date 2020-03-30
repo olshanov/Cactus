@@ -2,7 +2,7 @@
 import os
 import logging
 
-from django.template.base import Library
+from django.template.library import Library
 from django.conf import settings
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
